@@ -49,23 +49,25 @@ int main(){
     for(int i = 0;i<10; i++){
         printf("%0.1f\t", myDataSet.xPoints[i]);
     }
+
+    printf("\ny bar: %.3f\n", myDataSet.yBar);
+    printf("x bar: %.3f\n", myDataSet.xBar);
     return 0;
 
 }
 
 void populateMeans(dataSet *dSPtr){
-    dataSet dS = *dSPtr;
     float total = 0;
-    for(int i = 0; i < 0; i++){
-        total+=dS.xPoints[i];
+    for(int i = 0; i < 10; i++){
+        total+=dSPtr->xPoints[i];
     }
-    dS.xBar = total/10;
+    dSPtr->xBar = total/10;
 
     total = 0;
-    for(int i = 0; i < 0; i++){
-        total+=dS.yPoints[i];
+    for(int i = 0; i < 10; i++){
+        total+=dSPtr->yPoints[i];
     }
-    dS.yBar = total/10;
+    dSPtr->yBar = total/10;
 }
 
 void correctSystematicErrorByVal(dataSet dS){
